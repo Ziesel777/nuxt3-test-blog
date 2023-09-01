@@ -1,0 +1,28 @@
+.soc-links{
+	&__wrap{
+		display: flex;
+		gap: 20px;
+	}
+	&__item{
+		@include size(30px);
+		display: block;
+		fill: $regular;
+
+		// transition: fill 200ms;
+		&:hover{
+			fill: $primary;
+		}
+
+		.img{
+			@include size(100%);
+			display: block;
+			object-fit: contain;
+			object-position: center;
+		}
+		.ico{
+			@include size(100%);
+			display: block;
+			transition: fill 200ms;
+		}
+	}
+}

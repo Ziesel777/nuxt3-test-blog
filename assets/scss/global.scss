@@ -1,0 +1,57 @@
+@import "./utils/fonts";
+@import "./utils/reset";
+@import './ui-kit/buttons';
+@import './ui-kit/inputs';
+@import './containers';
+
+html {
+	line-height: $mainLineHeight;
+	font-size: $mainFontSize;
+	color: $mainColor;
+
+	// height: 100vh;
+	// height: calc(var(--vh, 1vh) * 100);
+}
+
+body {
+	font-family: $mainFont;
+	font-size: $mainFontSize;
+	font-weight: $mainFontWeight;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+
+	background-color: $mainBodyBg;
+
+	@include width-max(1199px){
+		font-size: 16px;
+	}
+}
+button, input, textarea{
+	font-family: $mainFont;
+}
+input {
+	outline: none;
+	// color: $mainColor;
+	font-family: $mainFont;
+
+	&::placeholder{
+		// font-family: $mainFont;
+	}
+
+	&:-webkit-autofill {
+		box-shadow: inset 0 0 0 50px $regular !important; /* Цвет фона */
+		-webkit-text-fill-color: $white !important; /* цвет текста */
+		color: $white !important; /* цвет текста */
+		font-size: $mainFontSize;
+		font-family: $mainFont;
+
+		@include width-max(1199px){
+			font-size: 16px;
+		}
+	}
+}
+
+[v-cloak]{
+	// opacity: 0;
+	display: none;
+}

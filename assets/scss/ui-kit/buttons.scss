@@ -1,0 +1,98 @@
+%btn{
+	cursor: pointer;
+	height: 46px;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	gap: 8px;
+
+	padding: 12px 50px;
+
+	font-size: 18px;
+	line-height: 26px;
+	font-weight: 400;
+	color: $white;
+	background-color: $regular;
+
+	transition: background-color 200ms;
+	&:hover{
+		@include width-min(1025px){
+			background-color: $primary;
+		}
+	}
+	&:active{ }
+
+	&:disabled,
+	&.disabled{
+		cursor: not-allowed;
+		background-color: $gray;
+
+		&:hover{
+			@include width-min(1025px){
+				background-color: $primary;
+			}
+		}
+		&:active{ }
+	}
+}
+%btn-primary{
+	background-color: $primary;
+	border: 1px solid $primary;
+
+	&:hover{
+		@include width-min(1025px){
+			background-color: transparent;
+		}
+	}
+	&:active{ }
+}
+
+.btn{
+	@extend %btn;
+
+	@include width-max(1199px){
+		font-size: 16px;
+	}
+
+	&--primary{
+		@extend %btn-primary;
+	}
+}
+
+.btn-arrow{
+	@include size(60px);
+	cursor: pointer;
+	position: relative;
+	background-color: $regular;
+
+	transition: background-color 200ms;
+	&:hover{
+		@include width-min(1025px){
+			background-color: $primary;
+		}
+	}
+
+	&::before{
+		@include size(12px);
+		content: "";
+		position: absolute;
+		top: 50%;
+
+		display: block;
+		border-top: 2px solid $white;
+		border-right: 2px solid $white;
+		border-radius: 1px;
+	}
+	&--right {
+		&::before{
+			left: 47%;
+			transform: translate(-50%, -50%) rotate(45deg);
+		}
+	}
+	&--left {
+		&::before{
+			left: 53%;
+			transform: translate(-50%, -50%) rotate(45deg - 180deg);
+		}
+	}
+}

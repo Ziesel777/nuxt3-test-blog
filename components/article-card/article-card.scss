@@ -1,0 +1,42 @@
+.article-card{
+	&__img{
+		@include responsive-box(calc(100% * #{320 / 427}));
+		position: relative;
+
+		@include width-max(767px){
+			@include responsive-box(56%);
+		}
+
+		.img{
+			@include size(100%);
+			position: absolute;
+			top: 0;
+			left: 0;
+
+			object-fit: cover;
+			object-position: center;
+
+			background-color: $img-bg;
+		}
+	}
+	&__title{
+		margin-top: 20px;
+
+		overflow: hidden;
+		text-overflow: ellipsis;
+		display: -moz-box;
+		display: -webkit-box;
+		line-clamp: 2;
+		box-orient: vertical;
+		-moz-box-orient: vertical;
+		-webkit-line-clamp: 2;
+		-webkit-box-orient: vertical;
+	}
+	&__btn{
+		margin-top: 30px;
+
+		@include width-max(499px){
+			text-align: center;
+		}
+	}
+}

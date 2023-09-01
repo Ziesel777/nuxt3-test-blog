@@ -1,0 +1,27 @@
+.text-quote{
+	position: relative;
+
+	&__container{
+		padding-left: 116px;
+	}
+	&__ico{
+		@include size(70px, 64px);
+		position: absolute;
+		top: 0;
+		left: 0;
+
+		fill: $gray;
+
+		.ico{
+			@include size(100%);
+		}
+	}
+	&__content{
+		font-style: italic;
+		font-weight: 300;
+	}
+	&__author{
+		@extend %body-2;
+		margin-top: 15px;
+	}
+}

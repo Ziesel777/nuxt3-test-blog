@@ -1,0 +1,17 @@
+@mixin main-logo{
+	@include size(133px, 32px);
+
+	.img{
+		@include size(100%);
+		display: block;
+		object-fit: contain;
+		object-position: center;
+	}
+}
+
+%body-2{
+	color: $gray;
+	font-size: 14px;
+	line-height: #{20/14};
+}
+
